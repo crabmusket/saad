@@ -40,3 +40,12 @@ def get_categories():
 	c = con.cursor()
 	c.execute('''SELECT * FROM Categories;''')
 	return [cat[0] for cat in c.fetchall()]
+
+def get_appliances(category = None):
+	con = sqlite3.connect('saad.db')
+	c = con.cursor()
+	if category is not None:
+		c.execute('''SELECT * FROM Appliances WHERE category = '{0}';'''.format(category))
+	else:
+		c.execute('''SELECT * FROM Appliances;''')
+	return c.fetchall()
