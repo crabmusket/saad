@@ -1,0 +1,18 @@
+/**** Global page styling ****/
+
+body {
+	
+}
+
+/**** Page layout ****/
+
+#toolbar {
+	height: 100px;
+	width: 100%;
+	background: rgb(84, 114, 16);
+}
+
+#viewer {
+	width: 100%;
+	top: 100px;
+}
