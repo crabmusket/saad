@@ -31,7 +31,7 @@ class MyHandler(BaseHTTPRequestHandler):
 				self.wfile.write(self.path.encode("utf-8"))
 			return
 		except:
-			self.send_error(404,'File Not Found: %s' % self.path)
+			self.send_error(404, 'File Not Found: {0}'.format(self.path))
 
 	def do_POST(self):
 		try:
@@ -41,7 +41,7 @@ class MyHandler(BaseHTTPRequestHandler):
 			self.end_headers()
 			self.wfile.write(self.path.encode("utf-8"))
 		except:
-			self.send_error(404,'File Not Found: %s' % self.path)
+			self.send_error(404, 'File Not Found: {0}'.format(self.path))
 
 def serve():
 	try:
