@@ -14,13 +14,13 @@ information about these appliances while they are on-site.
 Installation
 ------------
 
- 1. Download [**saad**](https://github.com/eightyeight/saad/zipball/master)
+ 1. [Download **saad**](https://github.com/eightyeight/saad/zipball/master).
  2. Unzip the downloaded file where you want it.
- 3. Install [Python](http://www.python.org/)
+ 3. Install [Python](http://www.python.org/).
 
 Use
 ---
 
  1. Double-click on `server.py` to run the server.
- 2. Open `index.html` and use the database.
+ 2. Open `index.html` in a browser and use the database.
  3. When you're finished, close the server window.
