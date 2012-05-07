@@ -16,3 +16,34 @@ body {
 	width: 100%;
 	top: 100px;
 }
+
+/**** Toolbar ****/
+
+#categories {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+}
+
+#categories a.category {
+	display: block;
+	width: 90px;
+	height: 40px;
+	padding: 5px;
+	line-height: 40px;
+	
+	background: rgb(215, 242, 149);
+	
+	font-family: sans-serif;
+	font-weight: bold;
+	color: rgb(200, 200, 200);
+}
+
+#categories a.category:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#categories a.selected {
+	background: rgb(84, 114, 16);
+}
