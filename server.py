@@ -2,6 +2,21 @@ import saad, saadquery
 import string, cgi, time
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
+def create_db():
+	saadquery.create()
+	return "Database created."
+
+def get_categories():
+	cats = ""
+	for c in saadquery.get_categories():
+		cats += c + "\n"
+	return cats
+
+GETHANDLERS = {
+	"create": create_db,
+	"categories": get_categories
+}
+
 class MyHandler(BaseHTTPRequestHandler):
 	def do_GET(self):
 		try:
@@ -9,14 +24,10 @@ class MyHandler(BaseHTTPRequestHandler):
 			self.send_header('Content-type', 'text/html')
 			self.send_header('Access-Control-Allow-Origin', '*')
 			self.end_headers()
-			if self.path[1:] == "create":
-				saadquery.create()
-				self.wfile.write("Database created.".encode("utf-8"))
-			elif self.path[1:] == "categories":
-				for c in saadquery.get_categories():
-					self.wfile.write(c.encode("utf-8"))
-					self.wfile.write("\r\n".encode("utf-8"))
-			else:
+			try:
+				fn = GETHANDLERS[self.path[1:]]
+				self.wfile.write(fn().encode("utf-8"))
+			except KeyError:
 				self.wfile.write(self.path.encode("utf-8"))
 			return
 		except:
