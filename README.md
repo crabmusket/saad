@@ -16,7 +16,8 @@ Installation
 
  1. [Download **saad**](https://github.com/eightyeight/saad/zipball/master).
  2. Unzip the downloaded file where you want it.
- 3. Install [Python](http://www.python.org/).
+ 3. [Install Python](http://www.python.org/). Make sure you choose a release
+    from the 3.x.x series.
 
 Use
 ---
