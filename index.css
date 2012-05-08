@@ -23,6 +23,7 @@ body {
 	width: 100px;
 	height: 100px;
 	display: inline-block;
+	float: left;
 }
 
 #categories a.category {
@@ -46,4 +47,21 @@ body {
 
 #categories a.selected {
 	background: rgb(84, 114, 16);
+}
+
+#options {
+	float: left;
+	width: 200px;
+	height: 90px;
+	padding: 5px;
+}
+
+#options select {
+	width: 180px;
+}
+
+#appliances {
+	float: left;
+	height: 90px;
+	padding: 5px;
 }
