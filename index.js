@@ -5,10 +5,10 @@ $().ready(function() {
     });
 	
 	// Select categories.
-	$('a.category').click(function() {
-		$('a.category').removeClass('selected');
+	$('a.feature').click(function() {
+		$('a.feature').removeClass('selected');
 		$(this).addClass('selected');
 	});
 	// First category selected by default.
-	$('a.category:first').addClass('selected');
+	$('a.feature:first').addClass('selected');
 });

@@ -19,14 +19,14 @@ body {
 
 /**** Toolbar ****/
 
-#categories {
+#features {
 	width: 100px;
 	height: 100px;
 	display: inline-block;
 	float: left;
 }
 
-#categories a.category {
+#features a.feature {
 	display: block;
 	width: 90px;
 	height: 40px;
@@ -38,14 +38,15 @@ body {
 	font-family: sans-serif;
 	font-weight: bold;
 	color: rgb(200, 200, 200);
+	text-decoration: none;
 }
 
-#categories a.category:hover {
+#features a.feature:hover {
 	text-decoration: underline;
 	cursor: pointer;
 }
 
-#categories a.selected {
+#features a.selected {
 	background: rgb(84, 114, 16);
 }
 
