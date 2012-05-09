@@ -1,12 +1,12 @@
 FEATURE = '';
 
-function selectFeature(var f) {
+function selectFeature(f) {
 	$('a.feature').removeClass('selected');
 	f.addClass('selected');
 	FEATURE = f.html();
 }
 
-function selectCategory(var c) {
+function selectCategory(c) {
 	// Clear appliances list.
 	$('#appliances').empty();
 	// Get list of appliances within category.
