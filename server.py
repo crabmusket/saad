@@ -1,19 +1,28 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import saad, saadquery
 
-def create_db():
+def create_db(options):
 	saadquery.create()
 	return "Database created."
 
-def get_categories():
+def get_categories(options):
 	cats = ""
 	for c in saadquery.get_categories():
 		cats += c + "\n"
 	return cats
 
+def get_appliances(options):
+	if len(options) == 0
+		options = None
+	apps = ""
+	for a in saadquery.get_appliances(options):
+		apps += a + "\n"
+	return apps
+
 GETHANDLERS = {
 	"create": create_db,
-	"categories": get_categories
+	"categories": get_categories,
+	"appliances": get_appliances,
 }
 
 class MyHandler(BaseHTTPRequestHandler):
@@ -24,8 +33,9 @@ class MyHandler(BaseHTTPRequestHandler):
 			self.send_header('Access-Control-Allow-Origin', '*')
 			self.end_headers()
 			try:
-				fn = GETHANDLERS[self.path[1:]]
-				self.wfile.write(fn().encode("utf-8"))
+				words = self.path[1:].split('/')
+				fn = GETHANDLERS[words[0]]
+				self.wfile.write(fn(words[1:]).encode("utf-8"))
 			except KeyError:
 				self.wfile.write(self.path.encode("utf-8"))
 			return
