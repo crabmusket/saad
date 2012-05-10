@@ -1,6 +1,5 @@
-import saad, saadquery
-import string, cgi, time
 from http.server import BaseHTTPRequestHandler, HTTPServer
+import saad, saadquery
 
 def create_db():
 	saadquery.create()
