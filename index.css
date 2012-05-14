@@ -4,34 +4,49 @@ body {
 	
 }
 
-/**** Page layout ****/
-
-#toolbar {
-	height: 100px;
-	width: 100%;
-	background: rgb(84, 114, 16);
-}
+/**** Appliance view ****/
 
 #viewer {
 	width: 100%;
-	top: 100px;
+	top: 40px;
 }
 
 /**** Toolbar ****/
 
-#features {
-	width: 100px;
-	height: 100px;
-	display: inline-block;
-	float: left;
+#toolbar {
+	height: 2em;
+	padding: 0px;
+	width: 100%;
+	background: rgb(84, 114, 16);
 }
 
-#features a.feature {
-	display: block;
+/**** Options ****/
+
+#options {
+	margin: 0px auto;
+	width: 720px;
+	height: 2em;
+}
+
+#options select {
+	display: inline-block;
+	width: 160px;
+}
+
+#options form {
+	display: inline-block;
+	width: 120px;
+	height: 2em;
+}
+
+/**** Feature link ****/
+
+a.feature {
+	display: inline-block;
 	width: 90px;
-	height: 40px;
-	padding: 5px;
-	line-height: 40px;
+	height: 2em;
+	padding: 0px 5px;
+	line-height: 2em;
 	
 	background: rgb(215, 242, 149);
 	
@@ -41,28 +56,11 @@ body {
 	text-decoration: none;
 }
 
-#features a.feature:hover {
+a.feature:hover {
 	text-decoration: underline;
 	cursor: pointer;
 }
 
-#features a.selected {
+a.selected {
 	background: rgb(84, 114, 16);
-}
-
-#options {
-	float: left;
-	width: 200px;
-	height: 90px;
-	padding: 5px;
-}
-
-#options select {
-	width: 180px;
-}
-
-#appliances {
-	float: left;
-	height: 90px;
-	padding: 5px;
 }

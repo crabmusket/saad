@@ -11,4 +11,8 @@ $().ready(function() {
 	});
 	// First category selected by default.
 	$('a.feature:first').addClass('selected');
+	
+	$('#search').keyup(function() {
+		var filter = $(this).val();
+	});
 });
