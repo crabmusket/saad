@@ -53,7 +53,7 @@ a.feature {
 	
 	font-family: sans-serif;
 	font-weight: bold;
-	color: rgb(200, 200, 200);
+	color: rgb(240, 240, 240);
 	text-decoration: none;
 }
 
@@ -64,4 +64,5 @@ a.feature:hover {
 
 a.selected {
 	background: rgb(215, 242, 149);
+	color: rgb(140, 140, 140);
 }
