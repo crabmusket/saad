@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>SAAD alpha 2</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script type="text/javascript" src="data.js"></script>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="handlebars.js"></script>
+	<script type="text/javascript" src="saad.js"></script>
+	<script id="appliance-template" type="text/x-handlebars-template">
+		<ul>
+		{{#appliances}}
+			<li>
+				<a class="category"><h1>{{name}}</h1></a>
+				<ul>
+				{{#appliances}}
+					<li><a class="item" target="{{id name}}">{{name}}</a></li>
+					<div class="note" id="{{id name}}">
+						<p>{{array notes}}</p>
+					</div>
+				{{/appliances}}
+				</ul>
+			</li>
+		{{/appliances}}
+		</ul>
+	</script>
+	<script id="structure-template" type="text/x-handlebars-template">
+		<ul>
+		{{#structures}}
+			<li>
+				<p>{{name}}</p>
+				<ul>
+				{{#features}}
+					<li>{{name}}</li>
+				{{/features}}
+				</ul>
+			</li>
+		{{/structures}}
+		</ul>
+	</script>
+</head>
+
+<body>
+	<div id="content">
+		<div id="query-view">
+			<a id="toggle-query" class="banner">Query</a>
+			<form id="query">
+				<fieldset>
+					<input type="checkbox" name="notes" id="notes" /> <label for="notes">Include notes</label> <br />
+					<input type="checkbox" name="price" id="price" /> <label for="price">Include price</label> <br />
+				</fieldset>
+				<fieldset style="text-align: center">
+					<input type="button" value="Browse" title="Browse appliance and structure entries." onClick="render();"/>
+					<input type="button" value="Generate" title="Generate a report."/>
+				</fieldset>
+			</form>
+		</div>
+		<div class="panel">
+			<a id="select-appliances" class="banner">Appliances</a>
+			<div id="app-view" class="view"></div>
+		</div>
+		<div class="panel">
+			<a id="select-structures" class="banner">Structures</a>
+			<div id="str-view" class="view"></div>
+		</div>
+	</div>
+</body>
+
+</html>
