@@ -29,5 +29,5 @@ See also
 Libraries
 ---------
 
-[jQuery](http://jquery.com/)
-[Handlebars](http://handlebarsjs.com/)
+ * [jQuery](http://jquery.com/)
+ * [Handlebars](http://handlebarsjs.com/)
