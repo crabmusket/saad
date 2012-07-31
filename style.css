@@ -12,6 +12,19 @@ body {
 	min-width: 640px;
 }
 
+#query-view {
+	width: 100%;
+}
+
+div.panel {
+	width: 50%;
+	height: 100%;
+	display: inline-block;
+	float: left;
+}
+
+/** Query form **/
+
 #query {
 	width: 200px;
 	margin: 0px auto;
@@ -22,12 +35,7 @@ fieldset {
 	border: none;
 }
 
-div.panel {
-	width: 50%;
-	height: 100%;
-	display: inline-block;
-	float: left;
-}
+/** Global styles **/
 
 a {
 	cursor: pointer;
@@ -37,26 +45,38 @@ a:hover {
 	text-decoration: underline;
 }
 
+/** Text and headers **/
+
+h1 {
+	padding-left: 5px;
+	font-size: large;
+	font-weight: normal;
+}
+
+h2 {
+	padding-left: 40px;
+	font-size: medium;
+	font-weight: normal;
+}
+
 a.banner {
 	width: 100%;
 	background: yellow;
 	display: block;
 	text-align: center;
+	font-size: medium;
 }
 
 a.item {
 	font-weight: bold;
 }
 
-#query-view {
-	width: 100%;
-}
-
 ul.bulletless {
 	list-style-type: none;
+	padding-left: 0;
 }
 
 div.note {
-	position: relative;
-	left: -40px;
+	/*position: relative;
+	left: -40px;*/
 }
