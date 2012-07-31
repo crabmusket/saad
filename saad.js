@@ -39,9 +39,16 @@ function render() {
 	$("#str-view").html(strhtml);
 	$("#app-view").slideDown('fast');
 	$("#str-view").slideDown('fast');
-	$("div.note").toggle();
+	$("div.item").toggle();
 	$(".items li a").click(function() {
 		$("#" + $(this).attr("target")).slideToggle('fast');
+		if($(this).hasClass('selected'))
+			$(this).delay('fast').queue(function() {
+				$(this).toggleClass('selected');
+				$(this).dequeue();
+			});
+		else
+			$(this).toggleClass('selected');
 	});
 	$(".categories li a").click(function() {
 		$(this).next().slideToggle('fast');
