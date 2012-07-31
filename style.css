@@ -77,9 +77,13 @@ ul.categories {
 }
 
 a.header {
-	background: yellow;
+	background: #FFFFA0;
 	text-align: center;
 	font-size: medium;
+}
+
+a.header:hover {
+	background: #FFFF00;
 }
 
 a.banner {
