@@ -35,7 +35,7 @@ fieldset {
 	border: none;
 }
 
-/** Global styles **/
+/** Text **/
 
 a {
 	cursor: pointer;
@@ -44,8 +44,6 @@ a {
 a:hover {
 	text-decoration: underline;
 }
-
-/** Text **/
 
 ul.items {
 	list-style-type: none;
@@ -66,8 +64,7 @@ ul.categories {
 }
 
 .items > li {
-	/*padding: 5px;
-	padding-left: 40px;*/
+	padding-top: 5px;
 	text-indent: 40px;
 	font-size: medium;
 	font-weight: normal;
@@ -91,8 +88,6 @@ a.banner {
 }
 
 div.item {
-	/*position: relative;
-	left: -40px;*/
 	font-size: small;
 	background: #F0F0F0;
 	padding: 10px;
