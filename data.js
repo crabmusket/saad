@@ -103,7 +103,7 @@ data = {
 						"Also known as a range, stove or cooker. These products combine both a cook top and one or more ovens. Upright cookers can be elevated with the cook top- and oven adjacent to each other or free standing with the cook top above the oven. Additionally, upright gas cookers may have an electric griller and be either hard wired or have a plug-in operation."
 					]
 				},
-				{ name: "Upright cook",
+				{ name: "Upright cook again?",
 					price: {from: 500, to: 3500},
 					power: {
 						"On": 2400,
