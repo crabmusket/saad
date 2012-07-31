@@ -52,7 +52,7 @@ function render() {
 	});
 	$(".categories li a").click(function() {
 		$(this).next().slideToggle('fast');
-	});
+	}).next().toggle();
 	$("#query").slideUp('fast');
 }
 
