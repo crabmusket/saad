@@ -52,7 +52,7 @@ a.item {
 	width: 100%;
 }
 
-ul {
+ul.bulletless {
 	list-style-type: none;
 }
 

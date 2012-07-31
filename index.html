@@ -10,15 +10,15 @@
 	<script type="text/javascript" src="data.js"></script>
 	<script type="text/javascript" src="saad.js"></script>
 	<script id="appliance-template" type="text/x-handlebars-template">
-		<ul>
+		<ul class="bulletless">
 		{{#appliances}}
 			<li>
 				<a class="category"><h1>{{name}}</h1></a>
-				<ul>
+				<ul class="bulletless">
 				{{#appliances}}
 					<li><a class="item" target="{{id name}}">{{name}}</a></li>
 					<div class="note" id="{{id name}}">
-						<p>{{array notes}}</p>
+						{{{array notes}}}
 					</div>
 				{{/appliances}}
 				</ul>
@@ -27,13 +27,15 @@
 		</ul>
 	</script>
 	<script id="structure-template" type="text/x-handlebars-template">
-		<ul>
+		<ul class="bulletless">
 		{{#structures}}
 			<li>
-				<p>{{name}}</p>
-				<ul>
+				<a class="category"><h1>{{name}}</h1></a>
+				<ul class="bulletless">
 				{{#features}}
-					<li>{{name}}</li>
+					<li><a class="item" target="{{id name}}">{{name}}</a></li>
+					<div class="note" id="{{id name}}">
+					</div>
 				{{/features}}
 				</ul>
 			</li>
