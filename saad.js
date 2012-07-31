@@ -1,3 +1,26 @@
+function fmt_price(price) {
+	if(!price)
+		return "";
+	else if(price.from && price.to)
+		return "$" + price.from + " - $" + price.to;
+	else {
+		str = Array();
+		for(type in price) {
+			str.push(type + ": " + fmt_price(price[type]));
+		}
+		return str.join(", ");
+	}
+}
+
+function fmt_power(power) {
+	if(!power)
+		return "";
+	else if(power.from && power.to)
+		return power.from + " - " + power.to + "W";
+	else
+		return "something else";
+}
+
 // Handlebars helpers
 Handlebars.registerHelper('id', function(str) {
 	if(str)
@@ -5,6 +28,8 @@ Handlebars.registerHelper('id', function(str) {
 	else
 		return "";
 });
+Handlebars.registerHelper('fmt_price', fmt_price);
+Handlebars.registerHelper('fmt_power', fmt_power);
 
 // Render app and str templates
 function render() {
