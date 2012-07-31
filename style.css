@@ -66,11 +66,17 @@ ul.categories {
 }
 
 .items > li {
-	padding: 5px;
-	padding-left: 40px;
+	/*padding: 5px;
+	padding-left: 40px;*/
+	text-indent: 40px;
 	font-size: medium;
 	font-weight: normal;
 	margin: 0;
+	line-height: 2em;
+}
+
+.items > li a:hover, .items > li a.selected {
+	background: #F0F0F0;
 }
 
 a.header {
@@ -84,8 +90,10 @@ a.banner {
 	display: block;
 }
 
-div.note {
+div.item {
 	/*position: relative;
 	left: -40px;*/
 	font-size: small;
+	background: #F0F0F0;
+	padding: 10px;
 }

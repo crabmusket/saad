@@ -17,7 +17,16 @@
 				<ul class="items">
 				{{#appliances}}
 					<li><a class="banner" target="{{id name}}">{{name}}</a></li>
-					<div class="note" id="{{id name}}">
+					<div class="item" id="{{id name}}">
+						<p>Replacement price: {{fmt_price price}}</p>
+						<p>Power usage: {{fmt_power power}}</p>
+						<p>Questions:</p>
+						<ul>
+						{{#questions}}
+							<li>{{this}}</li>
+						{{/questions}}
+						</ul>
+						<p>Notes:</p>
 						<ul>
 						{{#notes}}
 							<li>{{this}}</li>
@@ -38,7 +47,7 @@
 				<ul class="items">
 				{{#features}}
 					<li><a class="banner" target="{{id name}}">{{name}}</a></li>
-					<div class="note" id="{{id name}}">
+					<div class="item" id="{{id name}}">
 					</div>
 				{{/features}}
 				</ul>
