@@ -45,38 +45,47 @@ a:hover {
 	text-decoration: underline;
 }
 
-/** Text and headers **/
+/** Text **/
 
-h1 {
+ul.items {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+ul.categories {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+.categories > li {
+	padding: 10px;
 	padding-left: 5px;
 	font-size: large;
 	font-weight: normal;
+	margin: 0;
 }
 
-h2 {
+.items > li {
+	padding: 5px;
 	padding-left: 40px;
 	font-size: medium;
 	font-weight: normal;
+	margin: 0;
 }
 
-a.banner {
-	width: 100%;
+a.header {
 	background: yellow;
-	display: block;
 	text-align: center;
 	font-size: medium;
 }
 
-a.item {
-	font-weight: bold;
-}
-
-ul.bulletless {
-	list-style-type: none;
-	padding-left: 0;
+a.banner {
+	width: 100%;
+	display: block;
 }
 
 div.note {
 	/*position: relative;
 	left: -40px;*/
+	font-size: small;
 }

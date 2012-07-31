@@ -10,13 +10,13 @@
 	<script type="text/javascript" src="data.js"></script>
 	<script type="text/javascript" src="saad.js"></script>
 	<script id="appliance-template" type="text/x-handlebars-template">
-		<ul class="bulletless">
+		<ul class="categories">
 		{{#appliances}}
 			<li>
-				<a class="category"><h1>{{name}}</h1></a>
-				<ul class="bulletless">
+				<a class="banner">{{name}}</a>
+				<ul class="items">
 				{{#appliances}}
-					<li><a class="item" target="{{id name}}"><h2>{{name}}</h2></a></li>
+					<li><a class="banner" target="{{id name}}">{{name}}</a></li>
 					<div class="note" id="{{id name}}">
 						<ul>
 						{{#notes}}
@@ -31,13 +31,13 @@
 		</ul>
 	</script>
 	<script id="structure-template" type="text/x-handlebars-template">
-		<ul class="bulletless">
+		<ul class="categories">
 		{{#structures}}
 			<li>
-				<a class="category"><h1>{{name}}</h1></a>
-				<ul class="bulletless">
+				<a class="banner">{{name}}</a>
+				<ul class="items">
 				{{#features}}
-					<li><a class="item" target="{{id name}}"><h2>{{name}}</h2></a></li>
+					<li><a class="banner" target="{{id name}}">{{name}}</a></li>
 					<div class="note" id="{{id name}}">
 					</div>
 				{{/features}}
@@ -51,7 +51,7 @@
 <body>
 	<div id="content">
 		<div id="query-view">
-			<a id="toggle-query" class="banner">Query</a>
+			<a id="toggle-query" class="banner header">Query</a>
 			<form id="query">
 				<fieldset>
 					<input type="checkbox" name="notes" id="notes" /> <label for="notes">Include notes</label> <br />
@@ -64,11 +64,11 @@
 			</form>
 		</div>
 		<div class="panel">
-			<a id="select-appliances" class="banner">Appliances</a>
+			<a id="select-appliances" class="banner header">Appliances</a>
 			<div id="app-view" class="view"></div>
 		</div>
 		<div class="panel">
-			<a id="select-structures" class="banner">Structures</a>
+			<a id="select-structures" class="banner header">Structures</a>
 			<div id="str-view" class="view"></div>
 		</div>
 	</div>

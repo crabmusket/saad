@@ -15,10 +15,10 @@ function render() {
 	$("#app-view").slideDown('fast');
 	$("#str-view").slideDown('fast');
 	$("div.note").toggle();
-	$("a.item").click(function() {
+	$(".items li a").click(function() {
 		$("#" + $(this).attr("target")).slideToggle('fast');
 	});
-	$("a.category").click(function() {
+	$(".categories li a").click(function() {
 		$(this).next().slideToggle('fast');
 	});
 	$("#query").slideUp('fast');
