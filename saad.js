@@ -24,7 +24,7 @@ function fmt_power(power) {
 // Handlebars helpers
 Handlebars.registerHelper('id', function(str) {
 	if(str)
-		return "content-" + str.replace(/\s/g, "-").toLowerCase();
+		return "content-" + str.replace(/\s/g, "-").replace(/[\.,?\/#!$%\^&\*;:{}=\-_`~()]/g,"").toLowerCase();
 	else
 		return "";
 });
