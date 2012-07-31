@@ -21,6 +21,7 @@ div.panel {
 	height: 100%;
 	display: inline-block;
 	float: left;
+	overflow: hidden;
 }
 
 /** Query form **/
@@ -96,3 +97,4 @@ div.item {
 	background: #F0F0F0;
 	padding: 10px;
 }
+

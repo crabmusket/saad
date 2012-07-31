@@ -69,9 +69,25 @@ $(document).ready(function() {
 		$("#query").slideToggle('fast');
 	});
 	$("#select-appliances").click(function() {
-		$("#app-view").slideToggle('fast');
+		if($("#app-panel").is(':animated'))
+			return;
+		if($("#str-panel").width() == 0) {
+			$("#app-panel").animate({width: "50%"}, 'fast');
+			$("#str-panel").show().animate({width: "50%"}, 'fast');
+		} else {
+			$("#app-panel").animate({width: "100%"}, 'fast');
+			$("#str-panel").css("width", "49%").animate({width: "0%"}, 'fast', function() { $(this).hide(); });
+		}
 	});
 	$("#select-structures").click(function() {
-		$("#str-view").slideToggle('fast');
+		if($("#str-panel").is(':animated'))
+			return;
+		if($("#app-panel").width() == 0) {
+			$("#app-panel").show().animate({width: "50%"}, 'fast');
+			$("#str-panel").animate({width: "50%"}, 'fast');
+		} else {
+			$("#app-panel").css("width", "49%").animate({width: "0%"}, 'fast', function() { $(this).hide(); });
+			$("#str-panel").animate({width: "100%"}, 'fast');
+		}
 	});
 });
