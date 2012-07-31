@@ -18,7 +18,11 @@
 				{{#appliances}}
 					<li><a class="item" target="{{id name}}">{{name}}</a></li>
 					<div class="note" id="{{id name}}">
-						{{{array notes}}}
+						<ul>
+						{{#notes}}
+							<li>{{this}}</li>
+						{{/notes}}
+						</ul>
 					</div>
 				{{/appliances}}
 				</ul>

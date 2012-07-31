@@ -1,11 +1,4 @@
 // Handlebars helpers
-Handlebars.registerHelper('array', function(arr) {
-	if(arr)
-		return "<ul><li>" + arr.join("</li><li>") + "</li></ul>";
-	else
-		return "";
-});
-
 Handlebars.registerHelper('id', function(str) {
 	if(str)
 		return "content-" + str.replace(/\s/g, "-").toLowerCase();
