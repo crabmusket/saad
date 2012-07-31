@@ -1,6 +1,6 @@
 function fmt_price(price) {
 	if(!price)
-		return "";
+		return "N/A";
 	else if(price.from && price.to)
 		return "$" + price.from + " - $" + price.to;
 	else {
@@ -14,7 +14,7 @@ function fmt_price(price) {
 
 function fmt_power(power) {
 	if(!power)
-		return "";
+		return "N/A";
 	else if(power.from && power.to)
 		return power.from + " - " + power.to + "W";
 	else
