@@ -97,4 +97,12 @@ $(document).ready(function() {
 	});
 	
 	// Query view
+	$("#query form").submit(function() {
+		var mywindow = window.open('', 'saad report', 'height=400,width=600');
+		mywindow.document.write('<html><head><title>saad report</title>');
+		mywindow.document.write('<link rel="stylesheet" href="print.css" type="text/css" />');
+		mywindow.document.write('</head><body >');
+		mywindow.document.write('</body></html>');
+		return true;
+	});
 });
