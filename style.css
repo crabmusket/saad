@@ -8,39 +8,6 @@ body {
 	overflow-y: scroll;
 }
 
-/** Start view **/
-
-#start {
-	width: 200px;
-	margin: 0 auto;
-	text-align: center;
-}
-
-/** Browser view **/
-
-#browser-panel {
-}
-
-#item-panel {
-}
-
-/** Query view **/
-
-#query {
-	width: 100%;
-}
-
-#query form {
-	width: 200px;
-	margin: 0px auto;
-	padding: 20px;
-}
-
-fieldset {
-	border: none;
-}
-
-
 a {
 	cursor: pointer;
 }
@@ -48,6 +15,32 @@ a {
 a:hover {
 	text-decoration: underline;
 }
+
+/** Start view **/
+
+#start {
+	width: 200px;
+	margin: 0 auto;
+	text-align: center;
+	height: 90px;
+}
+
+/** Browser view **/
+
+#browser-panel {
+	float: left;
+	width: 300px;
+}
+
+#browser-panel h1 {
+	margin: 0;
+}
+
+#item-panel {
+	position: absolute;
+	left: 300px;
+}
+
 
 ul.items {
 	list-style-type: none;
@@ -101,3 +94,20 @@ div.item {
 	padding: 10px;
 }
 
+
+
+/** Query view **/
+
+#query {
+	width: 100%;
+}
+
+#query form {
+	width: 200px;
+	margin: 0px auto;
+	padding: 20px;
+}
+
+fieldset {
+	border: none;
+}
