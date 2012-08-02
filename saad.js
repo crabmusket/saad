@@ -55,9 +55,8 @@ $(document).ready(function() {
 	});
 	
 	// Browser view
-	console.log(data.appliances);
 	apps = listtemplate(data.appliances);
-	strs = listtemplate(data.features);
+	strs = listtemplate(data.structures);
 	$("#app-view").html(apps);
 	$("#str-view").html(strs);
 	
