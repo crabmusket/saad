@@ -63,6 +63,7 @@ $(document).ready(function() {
 	listtemplate = Handlebars.compile($("#browser-list-template").html());
 	apptemplate = Handlebars.compile($("#appliance-template").html());
 	strtemplate = Handlebars.compile($("#structure-template").html());
+	reporttemplate = Handlebars.compile($("#report-template").html());
 	
 	// Hide views until they're populated.
 	$("#browser").toggle();
@@ -98,10 +99,12 @@ $(document).ready(function() {
 	
 	// Query view
 	$("#query form").submit(function() {
+		var report = reporttemplate(data);
 		var mywindow = window.open('', 'saad report', 'height=400,width=600');
 		mywindow.document.write('<html><head><title>saad report</title>');
 		mywindow.document.write('<link rel="stylesheet" href="print.css" type="text/css" />');
 		mywindow.document.write('</head><body >');
+		mywindow.document.write(report);
 		mywindow.document.write('</body></html>');
 		return true;
 	});
