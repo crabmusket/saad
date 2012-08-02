@@ -34,6 +34,7 @@ a:hover {
 
 #browser-panel h1 {
 	margin: 0;
+	padding-left: 10px;
 }
 
 #item-panel {
@@ -52,7 +53,6 @@ ul.categories {
 }
 
 .categories > li a {
-	padding: 10px;
 	padding-left: 15px;
 	font-size: large;
 	font-weight: normal;
@@ -68,7 +68,7 @@ ul.categories {
 	line-height: 1.5em;
 }
 
-.items > li a:hover, .items > li a.selected, .categories > li a:hover {
+.items > li a:hover, .items > li a.selected {
 	background: #F0F0F0;
 }
 
