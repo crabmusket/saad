@@ -44,12 +44,14 @@ $(document).ready(function() {
 	
 	// Start view
 	$("#open-browser").click(function() {
-		$("#start").slideToggle('fast');
-		$("#browser").slideToggle('fast');
+		//$("#start").slideToggle('fast');
+		$("#query").slideUp('fast');
+		$("#browser").slideDown('fast');
 	});
 	$("#open-query").click(function() {
-		$("#start").slideToggle('fast');
-		$("#query").slideToggle('fast');
+		//$("#start").slideToggle('fast');
+		$("#query").slideDown('fast');
+		$("#browser").slideUp('fast');
 	});
 	
 	// Browser view
