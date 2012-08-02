@@ -1,3 +1,5 @@
+/** Global styles **/
+
 body {
 	padding: 0;
 	margin: 0;
@@ -6,27 +8,29 @@ body {
 	overflow-y: scroll;
 }
 
-/** Page layout **/
+/** Start view **/
 
-#content {
-	min-width: 640px;
+#start {
+	width: 200px;
+	margin: 0 auto;
+	text-align: center;
 }
 
-#query-view {
+/** Browser view **/
+
+#browser-panel {
+}
+
+#item-panel {
+}
+
+/** Query view **/
+
+#query {
 	width: 100%;
 }
 
-div.panel {
-	width: 50%;
-	height: 100%;
-	display: inline-block;
-	float: left;
-	overflow: hidden;
-}
-
-/** Query form **/
-
-#query {
+#query form {
 	width: 200px;
 	margin: 0px auto;
 	padding: 20px;
@@ -36,7 +40,6 @@ fieldset {
 	border: none;
 }
 
-/** Text **/
 
 a {
 	cursor: pointer;

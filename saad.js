@@ -31,63 +31,33 @@ Handlebars.registerHelper('id', function(str) {
 Handlebars.registerHelper('fmt_price', fmt_price);
 Handlebars.registerHelper('fmt_power', fmt_power);
 
-// Render app and str templates
-function render() {
-	apphtml = apptemplate(data);
-	strhtml = strtemplate(data);
-	$("#app-view").html(apphtml);
-	$("#str-view").html(strhtml);
-	$("#app-view").slideDown('fast');
-	$("#str-view").slideDown('fast');
-	$("div.item").toggle();
-	$(".items li a").click(function() {
-		$("#" + $(this).attr("target")).slideToggle('fast');
-		if($(this).hasClass('selected'))
-			$(this).delay('fast').queue(function() {
-				$(this).toggleClass('selected');
-				$(this).dequeue();
-			});
-		else
-			$(this).toggleClass('selected');
-	});
-	$(".categories li a").click(function() {
-		$(this).next().slideToggle('fast');
-	}).next().toggle();
-	$("#query").slideUp('fast');
-}
-
 // Document is loaded
 $(document).ready(function() {
 	// Compile templates
+	listtemplate = Handlebars.compile($("#browser-list-template").html());
 	apptemplate = Handlebars.compile($("#appliance-template").html());
 	strtemplate = Handlebars.compile($("#structure-template").html());
+	
 	// Hide views until they're populated.
-	$("#app-view").toggle();
-	$("#str-view").toggle();
-	// View buttons
-	$("#toggle-query").click(function() {
+	$("#browser").toggle();
+	$("#query").toggle();
+	
+	// Start view
+	$("#open-browser").click(function() {
+		$("#start").slideToggle('fast');
+		$("#browser").slideToggle('fast');
+	});
+	$("#open-query").click(function() {
+		$("#start").slideToggle('fast');
 		$("#query").slideToggle('fast');
 	});
-	$("#select-appliances").click(function() {
-		if($("#app-panel").is(':animated'))
-			return;
-		if($("#str-panel").width() == 0) {
-			$("#app-panel").animate({width: "50%"}, 'fast');
-			$("#str-panel").show().animate({width: "50%"}, 'fast');
-		} else {
-			$("#app-panel").animate({width: "100%"}, 'fast');
-			$("#str-panel").css("width", "49%").animate({width: "0%"}, 'fast', function() { $(this).hide(); });
-		}
-	});
-	$("#select-structures").click(function() {
-		if($("#str-panel").is(':animated'))
-			return;
-		if($("#app-panel").width() == 0) {
-			$("#app-panel").show().animate({width: "50%"}, 'fast');
-			$("#str-panel").animate({width: "50%"}, 'fast');
-		} else {
-			$("#app-panel").css("width", "49%").animate({width: "0%"}, 'fast', function() { $(this).hide(); });
-			$("#str-panel").animate({width: "100%"}, 'fast');
-		}
-	});
+	
+	// Browser view
+	console.log(data.appliances);
+	apps = listtemplate(data.appliances);
+	strs = listtemplate(data.features);
+	$("#app-view").html(apps);
+	$("#str-view").html(strs);
+	
+	// Query view
 });

@@ -9,85 +9,79 @@
 	<script type="text/javascript" src="handlebars.js"></script>
 	<script type="text/javascript" src="data.js"></script>
 	<script type="text/javascript" src="saad.js"></script>
-	<script id="appliance-template" type="text/x-handlebars-template">
+	<script id="browser-list-template" type="text/x-handlebars-template">
+	{{#each this}}
 		<ul class="categories">
-		{{#appliances}}
-			{{#if appliances.length}}
-			<li>
-				<a class="banner">{{name}}</a>
-				<ul class="items">
-				{{#appliances}}
-					<li><a class="banner" target="{{id name}}">{{name}}</a></li>
-					<div class="item" id="{{id name}}">
-						<p>Replacement price: {{fmt_price price}}</p>
-						<p>Power usage: {{fmt_power power}}</p>
-						{{#if questions}}
-							<p>Questions:</p>
-							<ul>
-							{{#questions}}
-								<li>{{this}}</li>
-							{{/questions}}
-							</ul>
-						{{/if}}
-						{{#if notes}}
-							<p>Notes:</p>
-							<ul>
-							{{#notes}}
-								<li>{{this}}</li>
-							{{/notes}}
-							</ul>
-						{{/if}}
-					</div>
-				{{/appliances}}
-				</ul>
-			</li>
-			{{/if}}
-		{{/appliances}}
+		{{#if entries.length}}
+		<li>
+			<a class="banner">{{name}}</a>
+			<ul class="items">
+			{{#entries}}
+				<li><a class="banner" target="{{id name}}">{{name}}</a></li>
+			{{/entries}}
+			</ul>
+		</li>
+		{{/if}}
 		</ul>
+	{{/each}}
+	</script>
+	<script id="appliance-template" type="text/x-handlebars-template">
+	<h1>{{name}}</h1>
+	<p>Replacement price: {{fmt_price price}}</p>
+	<p>Power usage: {{fmt_power power}}</p>
+	{{#if questions}}
+		<p>Questions:</p>
+		<ul>
+		{{#questions}}
+			<li>{{this}}</li>
+		{{/questions}}
+		</ul>
+	{{/if}}
+	{{#if notes}}
+		<p>Notes:</p>
+		<ul>
+		{{#notes}}
+			<li>{{this}}</li>
+		{{/notes}}
+		</ul>
+	{{/if}}
 	</script>
 	<script id="structure-template" type="text/x-handlebars-template">
-		<ul class="categories">
-		{{#structures}}
-			<li>
-				<a class="banner">{{name}}</a>
-				<ul class="items">
-				{{#features}}
-					<li><a class="banner" target="{{id name}}">{{name}}</a></li>
-					<div class="item" id="{{id name}}">
-					</div>
-				{{/features}}
-				</ul>
-			</li>
-		{{/structures}}
-		</ul>
+	<h1>{{name}}</h1>
 	</script>
 </head>
 
 <body>
-	<div id="content">
-		<div id="query-view">
-			<a id="toggle-query" class="banner header">Query</a>
-			<form id="query">
-				<fieldset>
-					<input type="checkbox" name="notes" id="notes" /> <label for="notes">Include notes</label> <br />
-					<input type="checkbox" name="price" id="price" /> <label for="price">Include price</label> <br />
-				</fieldset>
-				<fieldset style="text-align: center">
-					<input type="button" value="Browse" title="Browse appliance and structure entries." onClick="render();"/>
-					<input type="button" value="Generate" title="Generate a report."/>
-				</fieldset>
-			</form>
-		</div>
-		<div class="panel" id="app-panel">
-			<a id="select-appliances" class="banner header">Appliances</a>
+	<div id="start">
+		<h1>saad</h1>
+		<a id="open-browser">Browse</a>
+		<a id="open-query">Report</a>
+	</div>
+	
+	<div id="browser">
+		<div id="browser-panel">
+			<h1 class="banner">Appliances</a>
 			<div id="app-view" class="view"></div>
-		</div>
-		<div class="panel" id="str-panel">
-			<a id="select-structures" class="banner header">Structures</a>
+			<h1 class="banner">Structures</a>
 			<div id="str-view" class="view"></div>
 		</div>
+		<div id="item-panel">
+			<p>Select the categories to the right to expand them, then select an individual appliance to view it in this window.</p>
+		</div>
+	</div>
+	
+	<div id="query">
+		<a id="toggle-query" class="banner header">Query</a>
+		<form>
+			<fieldset>
+				<input type="checkbox" name="notes" id="notes" /> <label for="notes">Include notes</label> <br />
+				<input type="checkbox" name="price" id="price" /> <label for="price">Include price</label> <br />
+			</fieldset>
+			<fieldset style="text-align: center">
+				<input type="submit" value="Generate" />
+			</fieldset>
+		</form>
 	</div>
 </body>
 
 </html>
-

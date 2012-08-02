@@ -3,7 +3,7 @@ data = {
 	structures: [
 		{
 			name: "Lighting",
-			features: [
+			entries: [
 				{ name: "Fluorescent Circline",
 					lifespan: 12000,
 					power: {from: 20, to: 40},
@@ -26,7 +26,7 @@ data = {
 		},
 		{
 			name: "Windows",
-			features: [
+			entries: [
 				{ name: ""
 					
 				}
@@ -38,7 +38,7 @@ data = {
 	appliances: [
 		{
 			name: "Kitchen Appliances",
-			appliances: [
+			entries: [
 				{ name: "Electric cook top",
 					price: {
 						"2-element": {from: 450, to: 1000},
@@ -133,7 +133,7 @@ data = {
 		},
 		{
 			name: "Refrigerators",
-			appliances: [
+			entries: [
 				{ name: "Top-and-bottom",
 					price: null,
 					power: {
