@@ -41,7 +41,6 @@ a:hover {
 	left: 300px;
 }
 
-
 ul.items {
 	list-style-type: none;
 	padding-left: 0;
@@ -52,24 +51,24 @@ ul.categories {
 	padding-left: 0;
 }
 
-.categories > li {
+.categories > li a {
 	padding: 10px;
-	padding-left: 5px;
+	padding-left: 15px;
 	font-size: large;
 	font-weight: normal;
 	margin: 0;
 }
 
-.items > li {
-	padding-top: 5px;
+.items > li a {
+	padding: 0;
+	margin: 0;
 	text-indent: 40px;
 	font-size: medium;
 	font-weight: normal;
-	margin: 0;
-	line-height: 2em;
+	line-height: 1.5em;
 }
 
-.items > li a:hover, .items > li a.selected {
+.items > li a:hover, .items > li a.selected, .categories > li a:hover {
 	background: #F0F0F0;
 }
 
@@ -93,8 +92,6 @@ div.item {
 	background: #F0F0F0;
 	padding: 10px;
 }
-
-
 
 /** Query view **/
 

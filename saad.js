@@ -59,6 +59,10 @@ $(document).ready(function() {
 	strs = listtemplate(data.structures);
 	$("#app-view").html(apps);
 	$("#str-view").html(strs);
+	$("ul.items").hide();
+	$("ul.categories > li a").click(function() {
+		$(this).next().slideToggle('fast');
+	});
 	
 	// Query view
 });
