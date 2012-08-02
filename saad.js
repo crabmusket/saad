@@ -46,7 +46,7 @@ function showAppliance(name, id) {
 	clearBrowser()
 		.html("<p>" + name + "</p>")
 		.attr("showing", id);
-	$("#" + name).addClass("selected");
+	$("#" + id).addClass("selected");
 }
 
 // Show a particular feature in the browser.
@@ -54,7 +54,7 @@ function showFeature(name, id) {
 	clearBrowser()
 		.html("<p>" + name + "</p>")
 		.attr("showing", id);
-	$("#" + name).addClass("selected");
+	$("#" + id).addClass("selected");
 }
 
 // Document is loaded
