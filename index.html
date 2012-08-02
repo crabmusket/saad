@@ -10,8 +10,8 @@
 	<script type="text/javascript" src="data.js"></script>
 	<script type="text/javascript" src="saad.js"></script>
 	<script id="browser-list-template" type="text/x-handlebars-template">
+	<ul class="categories">
 	{{#each this}}
-		<ul class="categories">
 		{{#if entries.length}}
 		<li>
 			<a class="banner">{{name}}</a>
@@ -22,8 +22,8 @@
 			</ul>
 		</li>
 		{{/if}}
-		</ul>
 	{{/each}}
+	</ul>
 	</script>
 	<script id="appliance-template" type="text/x-handlebars-template">
 	<h1>{{name}}</h1>
@@ -60,12 +60,12 @@
 	
 	<div id="browser">
 		<div id="browser-panel">
-			<h1 class="banner">Appliances</a>
+			<h1 class="banner">Appliances</h1>
 			<div id="app-view" class="view"></div>
-			<h1 class="banner">Structures</a>
+			<h1 class="banner">Structures</h1>
 			<div id="str-view" class="view"></div>
 		</div>
-		<div id="item-panel">
+		<div class="item" id="item-panel">
 			<p>Select the categories to the right to expand them, then select an individual appliance to view it in this window.</p>
 		</div>
 	</div>
