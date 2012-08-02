@@ -31,6 +31,32 @@ Handlebars.registerHelper('id', function(str) {
 Handlebars.registerHelper('fmt_price', fmt_price);
 Handlebars.registerHelper('fmt_power', fmt_power);
 
+// Clears the currently-viewed item.
+function clearBrowser() {
+	var browser = $("#item-panel");
+	if(browser.attr("showing")) {
+		$("#" + browser.attr("showing")).removeClass("selected");
+	}
+	browser.html("");
+	return browser;
+}
+
+// Show a particular appliance in the browser.
+function showAppliance(name, id) {
+	clearBrowser()
+		.html("<p>" + name + "</p>")
+		.attr("showing", id);
+	$("#" + name).addClass("selected");
+}
+
+// Show a particular feature in the browser.
+function showFeature(name, id) {
+	clearBrowser()
+		.html("<p>" + name + "</p>")
+		.attr("showing", id);
+	$("#" + name).addClass("selected");
+}
+
 // Document is loaded
 $(document).ready(function() {
 	// Compile templates
@@ -62,6 +88,12 @@ $(document).ready(function() {
 	$("ul.items").hide();
 	$("ul.categories > li a").click(function() {
 		$(this).next().slideToggle('fast');
+	});
+	$("#app-view ul.items > li a").click(function() {
+		showAppliance($(this).attr('target'), $(this).attr('id'));
+	});
+	$("#str-view ul.items > li a").click(function() {
+		showFeature($(this).attr('target'), $(this).attr('id'));
 	});
 	
 	// Query view
