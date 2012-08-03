@@ -76,14 +76,47 @@
 	<h1>saad report</h1>
 	<p>Generated {{timestamp}}</p>
 	{{#appliances}}
-		<h2>{{name}}</h2>
+		<table>
+		<tr><th colspan="2">{{name}}</th></tr>
 		{{#entries}}
+			<tr><td class="name" colspan="2">{{name}}</td></tr>
+			<tr>
+				<td>Power usage</td>
+				{{#report_price}}<td>Price</td>{{/report_price}}
+			</tr>
+			<tr>
+				<td>{{watts power}}</td>
+				{{#report_price}}<td>{{dollars price}}</td>{{/report_price}}
+			</tr>
+			{{#report_questions}}
+			<tr><td colspan="2">
+				<p>Questions:</p>
+				<ul>
+				{{#questions}}
+					<li>{{this}}</li>
+				{{/questions}}
+				</ul>
+			</td></tr>
+			{{/report_questions}}
+			{{#report_notes}}
+			<tr><td colspan="2">
+				<p>Notes:</p>
+				<ul>
+				{{#notes}}
+					<li>{{this}}</li>
+				{{/notes}}
+				</ul>
+			</td></tr>
+			{{/report_notes}}
 		{{/entries}}
+		</table>
 	{{/appliances}}
 	{{#structures}}
-		<h2>{{name}}</h2>
+		<table>
+		<tr><th>{{name}}</th></tr>
 		{{#entries}}
 		{{/entries}}
+		</table>
 	{{/structures}}
 	</script>
 </head>
