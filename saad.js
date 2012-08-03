@@ -93,10 +93,11 @@ $(document).ready(function() {
 	// Query view
 	$("#query form").submit(function() {
 		var report = reporttemplate(data);
-		var mywindow = window.open('', 'saad report', 'height=400,width=600');
+		var mywindow = window.open('');
 		mywindow.document.write('<html><head><title>saad report</title>');
 		mywindow.document.write('<link rel="stylesheet" href="print.css" type="text/css" />');
 		mywindow.document.write('</head><body >');
+		mywindow.document.write('<ul class="buttons"><li><a onClick="window.print();">Print</a></li><li><a>Save</a></li></ul>');
 		mywindow.document.write(report);
 		mywindow.document.write('</body></html>');
 		return true;
