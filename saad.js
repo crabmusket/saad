@@ -1,36 +1,3 @@
-function fmt_price(price) {
-	if(!price)
-		return "N/A";
-	else if(price.from && price.to)
-		return "$" + price.from + " - $" + price.to;
-	else {
-		str = Array();
-		for(type in price) {
-			str.push(type + ": " + fmt_price(price[type]));
-		}
-		return str.join(", ");
-	}
-}
-
-function fmt_power(power) {
-	if(!power)
-		return "N/A";
-	else if(power.from && power.to)
-		return power.from + " - " + power.to + "W";
-	else
-		return "something else";
-}
-
-// Handlebars helpers
-Handlebars.registerHelper('id', function(str) {
-	if(str)
-		return "content-" + str.replace(/\s/g, "-").replace(/[\.,?\/#!$%\^&\*;:{}=\-_`~()]/g,"").toLowerCase();
-	else
-		return "";
-});
-Handlebars.registerHelper('fmt_price', fmt_price);
-Handlebars.registerHelper('fmt_power', fmt_power);
-
 // Clears the currently-viewed item.
 function clearBrowser() {
 	var browser = $("#item-panel");
@@ -41,19 +8,45 @@ function clearBrowser() {
 	return browser;
 }
 
+// Get the object associated with a named appliance.
+function getAppliance(name) {
+	if(!data)
+		return null;
+	for(var cat in data.appliances) {
+		for(var app in data.appliances[cat].entries) {
+			if(data.appliances[cat].entries[app].name == name)
+				return data.appliances[cat].entries[app];
+		}
+	}
+	return null;
+}
+
+// Get the object associated with a named structure.
+function getStructure(name) {
+	if(!data)
+		return null;
+	for(var cat in data.structures) {
+		for(var str in data.structures[cat].entries) {
+			if(data.structures[cat].entries[str].name == name)
+				return data.structures[cat].entries[str];
+		}
+	}
+	return null;
+}
+
 // Show a particular appliance in the browser.
 function showAppliance(name, id) {
 	clearBrowser()
-		.html("<p>" + name + "</p>")
-		.attr("showing", id);
+		.attr("showing", id)
+		.html(apptemplate(getAppliance(name)));
 	$("#" + id).addClass("selected");
 }
 
-// Show a particular feature in the browser.
-function showFeature(name, id) {
+// Show a particular structural feature in the browser.
+function showStructure(name, id) {
 	clearBrowser()
-		.html("<p>" + name + "</p>")
-		.attr("showing", id);
+		.attr("showing", id)
+		.html(strtemplate(getStructure(name)));
 	$("#" + id).addClass("selected");
 }
 
@@ -94,16 +87,17 @@ $(document).ready(function() {
 		showAppliance($(this).attr('target'), $(this).attr('id'));
 	});
 	$("#str-view ul.items > li a").click(function() {
-		showFeature($(this).attr('target'), $(this).attr('id'));
+		showStructure($(this).attr('target'), $(this).attr('id'));
 	});
 	
 	// Query view
 	$("#query form").submit(function() {
 		var report = reporttemplate(data);
-		var mywindow = window.open('', 'saad report', 'height=400,width=600');
+		var mywindow = window.open('');
 		mywindow.document.write('<html><head><title>saad report</title>');
 		mywindow.document.write('<link rel="stylesheet" href="print.css" type="text/css" />');
 		mywindow.document.write('</head><body >');
+		mywindow.document.write('<ul class="buttons"><li><a onClick="window.print();">Print</a></li><li><a>Save</a></li></ul>');
 		mywindow.document.write(report);
 		mywindow.document.write('</body></html>');
 		return true;

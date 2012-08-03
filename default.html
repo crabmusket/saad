@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css" />
 	<script type="text/javascript" src="jquery.js"></script>
 	<script type="text/javascript" src="handlebars.js"></script>
+	<script type="text/javascript" src="helpers.js"></script>
 	<script type="text/javascript" src="data.js"></script>
 	<script type="text/javascript" src="saad.js"></script>
 	<script id="browser-list-template" type="text/x-handlebars-template">
@@ -26,9 +27,10 @@
 	</ul>
 	</script>
 	<script id="appliance-template" type="text/x-handlebars-template">
+	<img src="./images/{{id name}}.png" />
 	<h1>{{name}}</h1>
-	<p>Replacement price: {{fmt_price price}}</p>
-	<p>Power usage: {{fmt_power power}}</p>
+	<p>Replacement price: {{dollars price}}</p>
+	<p>Power usage: {{watts power}}</p>
 	{{#if questions}}
 		<p>Questions:</p>
 		<ul>
@@ -47,10 +49,42 @@
 	{{/if}}
 	</script>
 	<script id="structure-template" type="text/x-handlebars-template">
+	<img src="./images/{{id name}}.png" />
 	<h1>{{name}}</h1>
+	<p>Power usage: {{watts power}}</p>
+	<p>Power efficiency: {{wpl efficiency}}</p>
+	<p>Average lifespan: {{hours lifespan}}</p>
+	<p>Replacement price: {{dollars price}}</p>
+	{{#if questions}}
+		<p>Questions:</p>
+		<ul>
+		{{#questions}}
+			<li>{{this}}</li>
+		{{/questions}}
+		</ul>
+	{{/if}}
+	{{#if notes}}
+		<p>Notes:</p>
+		<ul>
+		{{#notes}}
+			<li>{{this}}</li>
+		{{/notes}}
+		</ul>
+	{{/if}}
 	</script>
 	<script id="report-template" type="text/x-handlebars-template">
-	<p>Coming soon!</p>
+	<h1>saad report</h1>
+	<p>Generated {{timestamp}}</p>
+	{{#appliances}}
+		<h2>{{name}}</h2>
+		{{#entries}}
+		{{/entries}}
+	{{/appliances}}
+	{{#structures}}
+		<h2>{{name}}</h2>
+		{{#entries}}
+		{{/entries}}
+	{{/structures}}
 	</script>
 </head>
 
@@ -82,7 +116,7 @@
 			<div id="str-view" class="view"></div>
 		</div>
 		<div class="item" id="item-panel">
-			<p>Select the categories to the right to expand them, then select an individual appliance to view it in this window.</p>
+			<p>Click the categories to the right to expand them, then click an appliance's name to view details.</p>
 		</div>
 	</div>
 </body>
