@@ -1,5 +1,24 @@
 /** Global styles **/
 
 body {
-	padding: 10em;
+	padding: 5em;
+}
+
+ul.buttons {
+	position: fixed;
+	left: 5px;
+	top: 5px;
+	padding-left: 0;
+	list-style-type: none;
+}
+
+ul.buttons li {
+	display: inline-block;
+	padding: 0 5px;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+ul.buttons li:hover {
+	text-decoration: underline;
 }
