@@ -93,6 +93,13 @@ div.item {
 	padding: 10px;
 }
 
+div.item img {
+	float: right;
+	padding: 20px;
+	max-width: 300px;
+	max-height: 300px;
+}
+
 /** Query view **/
 
 #query {
