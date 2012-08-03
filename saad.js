@@ -49,8 +49,8 @@ function showAppliance(name, id) {
 	$("#" + id).addClass("selected");
 }
 
-// Show a particular feature in the browser.
-function showFeature(name, id) {
+// Show a particular structural feature in the browser.
+function showStructure(name, id) {
 	clearBrowser()
 		.html("<p>" + name + "</p>")
 		.attr("showing", id);
@@ -94,7 +94,7 @@ $(document).ready(function() {
 		showAppliance($(this).attr('target'), $(this).attr('id'));
 	});
 	$("#str-view ul.items > li a").click(function() {
-		showFeature($(this).attr('target'), $(this).attr('id'));
+		showStructure($(this).attr('target'), $(this).attr('id'));
 	});
 	
 	// Query view
