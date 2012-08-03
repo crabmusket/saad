@@ -41,19 +41,45 @@ function clearBrowser() {
 	return browser;
 }
 
+// Get the object associated with a named appliance.
+function getAppliance(name) {
+	if(!data)
+		return null;
+	for(var cat in data.appliances) {
+		for(var app in data.appliances[cat].entries) {
+			if(data.appliances[cat].entries[app].name == name)
+				return data.appliances[cat].entries[app];
+		}
+	}
+	return null;
+}
+
+// Get the object associated with a named structure.
+function getStructure(name) {
+	if(!data)
+		return null;
+	for(var cat in data.structures) {
+		for(var str in data.structures[cat].entries) {
+			if(data.structures[cat].entries[str].name == name)
+				return data.structures[cat].entries[str];
+		}
+	}
+	return null;
+}
+
 // Show a particular appliance in the browser.
 function showAppliance(name, id) {
 	clearBrowser()
-		.html("<p>" + name + "</p>")
-		.attr("showing", id);
+		.attr("showing", id)
+		.html(apptemplate(getAppliance(name)));
 	$("#" + id).addClass("selected");
 }
 
 // Show a particular structural feature in the browser.
 function showStructure(name, id) {
 	clearBrowser()
-		.html("<p>" + name + "</p>")
-		.attr("showing", id);
+		.attr("showing", id)
+		.html(strtemplate(getStructure(name)));
 	$("#" + id).addClass("selected");
 }
 
