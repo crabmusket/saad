@@ -73,7 +73,18 @@
 	{{/if}}
 	</script>
 	<script id="report-template" type="text/x-handlebars-template">
-	<p>Coming soon!</p>
+	<h1>saad report</h1>
+	<p>Generated {{timestamp}}</p>
+	{{#appliances}}
+		<h2>{{name}}</h2>
+		{{#entries}}
+		{{/entries}}
+	{{/appliances}}
+	{{#structures}}
+		<h2>{{name}}</h2>
+		{{#entries}}
+		{{/entries}}
+	{{/structures}}
 	</script>
 </head>
 
