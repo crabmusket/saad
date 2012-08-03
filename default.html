@@ -49,7 +49,28 @@
 	{{/if}}
 	</script>
 	<script id="structure-template" type="text/x-handlebars-template">
+	<img src="./images/{{id name}}.png" />
 	<h1>{{name}}</h1>
+	<p>Power usage: {{watts power}}</p>
+	<p>Power efficiency: {{wpl efficiency}}</p>
+	<p>Average lifespan: {{hours lifespan}}</p>
+	<p>Replacement price: {{dollars price}}</p>
+	{{#if questions}}
+		<p>Questions:</p>
+		<ul>
+		{{#questions}}
+			<li>{{this}}</li>
+		{{/questions}}
+		</ul>
+	{{/if}}
+	{{#if notes}}
+		<p>Notes:</p>
+		<ul>
+		{{#notes}}
+			<li>{{this}}</li>
+		{{/notes}}
+		</ul>
+	{{/if}}
 	</script>
 	<script id="report-template" type="text/x-handlebars-template">
 	<p>Coming soon!</p>
