@@ -91,7 +91,8 @@ $(document).ready(function() {
 	});
 	
 	// Query view
-	$("#query form").submit(function() {
+	$("#query form").submit(function(e) {
+		e.preventDefault();
 		var report = reporttemplate(data);
 		var mywindow = window.open('');
 		mywindow.document.write('<html><head><title>saad report</title>');
