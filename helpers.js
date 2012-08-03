@@ -56,3 +56,11 @@ function cleanString(str) {
 }
 
 Handlebars.registerHelper('id', cleanString);
+
+// Get current date and time string.
+function timestamp() {
+	var now = new Date();
+	return now.toDateString() + " " + now.toLocaleTimeString();
+}
+
+Handlebars.registerHelper('timestamp', timestamp);
