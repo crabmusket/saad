@@ -29,8 +29,8 @@
 	<script id="appliance-template" type="text/x-handlebars-template">
 	<img src="./images/{{id name}}.png" />
 	<h1>{{name}}</h1>
-	<p>Replacement price: {{fmt_price price}}</p>
-	<p>Power usage: {{fmt_power power}}</p>
+	<p>Replacement price: {{dollars price}}</p>
+	<p>Power usage: {{watts power}}</p>
 	{{#if questions}}
 		<p>Questions:</p>
 		<ul>
