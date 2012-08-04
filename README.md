@@ -13,13 +13,11 @@ It is designed to work offline, though some features will only be available onli
 Installation
 ------------
 
- 1. [Download **saad**](https://github.com/eightyeight/saad/zipball/master).
+You can use **saad** online [here](http://eightyeight.github.com/saad/default.html), or follow the steps below to install it on your computer for offline use.
+
+ 1. [Download saad](https://github.com/eightyeight/saad/zipball/master).
  2. Unzip the downloaded file where you want it.
-
-Use
----
-
- 1. Open `index.html` in a browser and use the database.
+ 3. Open `index.html` in a browser.
 
 See also
 --------

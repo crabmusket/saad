@@ -5,7 +5,7 @@ body {
 	margin: 0;
 	font-family: sans-serif;
 	font-size: small;
-	overflow-y: scroll;
+	/*overflow-y: scroll;*/
 }
 
 a {

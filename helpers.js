@@ -64,3 +64,23 @@ function timestamp() {
 }
 
 Handlebars.registerHelper('timestamp', timestamp);
+
+// Report helpers.
+Handlebars.registerHelper('report_notes', function(block) {
+    if($("#notes").attr('checked') && this.notes)
+        return block.fn(this);
+    else
+        return block.inverse(this);
+});
+Handlebars.registerHelper('report_price', function(block) {
+    if($("#price").attr('checked') && this.price)
+        return block.fn(this);
+    else
+        return block.inverse(this);
+});
+Handlebars.registerHelper('report_questions', function(block) {
+    if($("#questions").attr('checked') && this.questions)
+        return block.fn(this);
+    else
+        return block.inverse(this);
+});
