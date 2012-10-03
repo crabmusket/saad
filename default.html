@@ -1,158 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html>
+<html lang="en" ng-app="saad">
 
 <head>
+	<meta charset="utf-8">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+	<script src="scripts/app.js"></script>
+	<script src="scripts/controllers.js"></script>
+	<script src="scripts/filters.js"></script>
+	<script src="scripts/services.js"></script>
+	<!--<link rel="stylesheet" type="text/css" href="styles/" />-->
 	<title>saad</title>
-	<link rel="stylesheet" type="text/css" href="style.css" />
-	<script type="text/javascript" src="jquery.js"></script>
-	<script type="text/javascript" src="handlebars.js"></script>
-	<script type="text/javascript" src="helpers.js"></script>
-	<script type="text/javascript" src="data.js"></script>
-	<script type="text/javascript" src="saad.js"></script>
-	<script id="browser-list-template" type="text/x-handlebars-template">
-	<ul class="categories">
-	{{#each this}}
-		{{#if entries.length}}
-		<li>
-			<a class="banner">{{name}}</a>
-			<ul class="items">
-			{{#entries}}
-				<li><a class="banner" id="{{id name}}" target="{{name}}">{{name}}</a></li>
-			{{/entries}}
-			</ul>
-		</li>
-		{{/if}}
-	{{/each}}
-	</ul>
-	</script>
-	<script id="appliance-template" type="text/x-handlebars-template">
-	<img src="./images/{{id name}}.png" />
-	<h1>{{name}}</h1>
-	<p>Replacement price: {{dollars price}}</p>
-	<p>Power usage: {{watts power}}</p>
-	{{#if questions}}
-		<p>Questions:</p>
-		<ul>
-		{{#questions}}
-			<li>{{this}}</li>
-		{{/questions}}
-		</ul>
-	{{/if}}
-	{{#if notes}}
-		<p>Notes:</p>
-		<ul>
-		{{#notes}}
-			<li>{{this}}</li>
-		{{/notes}}
-		</ul>
-	{{/if}}
-	</script>
-	<script id="structure-template" type="text/x-handlebars-template">
-	<img src="./images/{{id name}}.png" />
-	<h1>{{name}}</h1>
-	<p>Power usage: {{watts power}}</p>
-	<p>Power efficiency: {{wpl efficiency}}</p>
-	<p>Average lifespan: {{hours lifespan}}</p>
-	<p>Replacement price: {{dollars price}}</p>
-	{{#if questions}}
-		<p>Questions:</p>
-		<ul>
-		{{#questions}}
-			<li>{{this}}</li>
-		{{/questions}}
-		</ul>
-	{{/if}}
-	{{#if notes}}
-		<p>Notes:</p>
-		<ul>
-		{{#notes}}
-			<li>{{this}}</li>
-		{{/notes}}
-		</ul>
-	{{/if}}
-	</script>
-	<script id="report-template" type="text/x-handlebars-template">
-	<h1>saad report</h1>
-	<p>Generated {{timestamp}}</p>
-	{{#appliances}}
-		<table>
-		<tr><th colspan="2">{{name}}</th></tr>
-		{{#entries}}
-			<tr><td class="name" colspan="2">{{name}}</td></tr>
-			<tr>
-				<td>Power usage</td>
-				{{#report_price}}<td>Price</td>{{/report_price}}
-			</tr>
-			<tr>
-				<td>{{watts power}}</td>
-				{{#report_price}}<td>{{dollars price}}</td>{{/report_price}}
-			</tr>
-			{{#report_questions}}
-			<tr><td colspan="2">
-				<p>Questions:</p>
-				<ul>
-				{{#questions}}
-					<li>{{this}}</li>
-				{{/questions}}
-				</ul>
-			</td></tr>
-			{{/report_questions}}
-			{{#report_notes}}
-			<tr><td colspan="2">
-				<p>Notes:</p>
-				<ul>
-				{{#notes}}
-					<li>{{this}}</li>
-				{{/notes}}
-				</ul>
-			</td></tr>
-			{{/report_notes}}
-		{{/entries}}
-		</table>
-	{{/appliances}}
-	{{#structures}}
-		<table>
-		<tr><th>{{name}}</th></tr>
-		{{#entries}}
-		{{/entries}}
-		</table>
-	{{/structures}}
-	</script>
 </head>
 
 <body>
-	<div id="start">
-		<h1>saad</h1>
-		<a id="open-browser">Browse</a>
-		<span style="padding: 0 10px;">|</span>
-		<a id="open-query">Report</a>
-	</div>
-	
-	<div id="query">
-		<form>
-			<fieldset>
-				<input type="checkbox" name="notes" id="notes" checked="checked" /> <label for="notes">Include notes</label> <br />
-				<input type="checkbox" name="price" id="price" checked="checked" /> <label for="price">Include price</label> <br />
-				<input type="checkbox" name="questions" id="questions" checked="checked" /> <label for="questions">Include questions</label> <br />
-			</fieldset>
-			<fieldset style="text-align: center">
-				<input type="submit" value="Generate" />
-			</fieldset>
-		</form>
-	</div>
-	
-	<div id="browser">
-		<div id="browser-panel">
-			<h1 class="banner">Appliances</h1>
-			<div id="app-view" class="view"></div>
-			<h1 class="banner">Structures</h1>
-			<div id="str-view" class="view"></div>
-		</div>
-		<div class="item" id="item-panel">
-			<p>Click the categories to the right to expand them, then click an appliance's name to view details.</p>
-		</div>
-	</div>
+	<div ng-view><p>Please enable JavaScript to use saad.</p></div>
 </body>
 
 </html>
