@@ -28,4 +28,4 @@ Libraries
 ---------
 
  * [jQuery](http://jquery.com/)
- * [Handlebars](http://handlebarsjs.com/)
+ * [AngularJS](http://angularjs.org/)
